@@ -2,23 +2,20 @@ Welcome to bb_google_analytics.
 This app was made to simplify the process of making reports using Google Analytics.
 
 The program can be used through command line only.
-In order to run the program navigate to folder where the .jar file resides and type 
-java -jar bb_google_analytics.jar -(all parameter here. Will be described later).
-Otherwise you will need to specify the absolute path to the file.
 NOTE: JRE/JDK needs to be installed on the computer in order to run the app.
 
 The application accepts multiple parameters and most of the are required.
 _________________________________________________________________________________________________________________________
 Parameters:
--acc   : (required) The AccountId of the Google Analytics Account you want to use (eg. 42639814);
--prop  : (required) The propertyId of the property under the specified Account  you want to report on (eg. UA-42639814-3);
--prof  : (required) The ProfileId of the profile(View) under the specified Property you want to query (eg. 81795136);
+-acc   : (required) The AccountId of the Google Analytics Account you want to use (eg. 12345678);
+-prop  : (required) The propertyId of the property under the specified Account  you want to report on (eg. AA-12345678-9);
+-prof  : (required) The ProfileId of the profile(View) under the specified Property you want to query (eg. 12345678);
 -start : (required) The start date of the query in a format : yyyy-mm-dd (eg. 2015-04-18);
 -end   : (required) The end date of the query in a format : yyyy-mm-dd (eg. 2015-05-18);
 -met   : (required) The metrics you want to see in the report in the format : ga:metricName (eg. ga:Users,ga:Sessions);
 -dim   : (required) Dimensions you want to use to build the report in the format : ga:dimensionName (eg. ga:Campaign,ga:pagePath);
 -fil   : (optional) Filters that you want to apply to your report in the format : ga:filterName 
-	 (eg. ga:Campaign=~_1c;ga:Medium==crm;ga:Source==email;ga:pagePath=~buy.html)
+	 (eg. ga:Campaign=~_1d;ga:Medium==crm;ga:Source==email;ga:pagePath=~smth.html)
          NOTE: == - exact match
          =~ - regex match
          ; - AND
@@ -61,11 +58,6 @@ and Service Account(analytics.Analytics_Report.java + drive.GoogleDriveAccess.ja
 Credentials for google accounts are stored within the project(client_secret.json and client_secret_an.p12); 
 client_secret.json - used for Installed application implementation;
 client_secret_an.p12 - used for Service Account implementation;
-________________________________________________________________________________________________________________________________
-
-Here is the query that allows us to track leads from where-to-buy pages for different retailers:
--acc 42639814 -prop UA-42639814-3 -prof 81795136 -start 300daysAgo -end today -met ga:Users,ga:totalEvents -dim ga:date,ga:Campaign,ga:pagePath,ga:eventAction -fil ga:Campaign=~_1c;ga:Medium==crm;ga:Source==email;ga:eventCategory=~LinkClicks;ga:hostname==us.blackberry.com;ga:pagePath==/smartphones/blackberry-passport-att/buy.html,ga:pagePath==/smartphones/blackberry-passport/buy.html,ga:pagePath==/smartphones/blackberry-classic/buy.html,ga:pagePath==/smartphones/blackberry-leap/buy.html;ga:eventAction=~http://store.shopblackberry.com,ga:eventAction=~http://www.bestbuy.com,ga:eventAction=~http://www.amazon.com,ga:eventAction=~http://www.att.com,ga:eventAction=~http://www.t-mobile.com,ga:eventAction=~http://www.verizonwireless.com,ga:eventAction=~http://www.bhphotovideo.com
-
 ________________________________________________________________________________________________________________________________
 
 Thank you,
