@@ -55,7 +55,8 @@ and downloading reports to the computer.
 Two approaches were implemented here: using Installed Application(analytics.Analytics_app.java + drive.DriveTest.java) 
 and Service Account(analytics.Analytics_Report.java + drive.GoogleDriveAccess.java).
 
-Credentials for google accounts are stored within the project(client_secret.json and client_secret_an.p12); 
+Credentials for google accounts should be stored within the project(client_secret.json and client_secret_an.p12), at the same 
+folder as .java file that will use the credentials; 
 client_secret.json - used for Installed application implementation;
 client_secret_an.p12 - used for Service Account implementation;
 ________________________________________________________________________________________________________________________________
