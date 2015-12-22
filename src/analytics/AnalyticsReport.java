@@ -50,7 +50,7 @@ public class AnalyticsReport {
 
 	// The directory where the user's credentials will be stored.
 	
-	private static final String APPLICATION_NAME = "bb_google_analytics";
+	private static final String APPLICATION_NAME = "google_analytics";
 	private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
 	private static NetHttpTransport httpTransport;
 	//private static FileDataStoreFactory dataStoreFactory;
@@ -62,7 +62,7 @@ public class AnalyticsReport {
 		byte[] buffer = new byte[is.available()];
 		is.read(buffer);
 		
-		File targetFile = new File("keys_bb_analytics.txt");
+		File targetFile = new File("keys_analytics.txt");
 		OutputStream outStream = new FileOutputStream(targetFile);
 		outStream.write(buffer);
 		outStream.flush();

@@ -30,7 +30,7 @@ import java.util.List;
 
 public class DriveTest {
 	
-	private static final String APPLICATION_NAME = "bb_analytics";
+	private static final String APPLICATION_NAME = "analytics";
 
 	    /** Directory to store user credentials. */
 	    private static final java.io.File DATA_STORE_DIR = new java.io.File(

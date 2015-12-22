@@ -38,7 +38,7 @@ public class GoogleDriveAccess {
 		byte[] buffer = new byte[is.available()];
 		is.read(buffer);
 		
-		java.io.File targetFile = new java.io.File("keys_bb_analytics.txt");
+		java.io.File targetFile = new java.io.File("keys_analytics.txt");
 		OutputStream outStream = new FileOutputStream(targetFile);
 		outStream.write(buffer);
 		outStream.flush();
@@ -56,14 +56,14 @@ public class GoogleDriveAccess {
 		//new java.io.File(SERVICE_ACCOUNT_PKCS12_FILE_PATH)
 		Drive service = new Drive.Builder(httpTransport, jsonFactory, null)
 				.setHttpRequestInitializer(credential)
-				.setApplicationName("bb_google_analytics")
+				.setApplicationName("google_analytics")
 				.build();
 		return service;
 
 	}
 	
 	public static void clean(){
-		java.io.File f = new java.io.File("keys_bb_analytics.txt");
+		java.io.File f = new java.io.File("keys_analytics.txt");
 		System.out.println(f.delete());
 	}
 
